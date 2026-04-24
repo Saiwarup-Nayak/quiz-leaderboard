@@ -1,39 +1,28 @@
-##This project polls a quiz API multiple times, handles duplicate responses, and generates a correct leaderboard based on total participant scores.
+**Quiz Leaderboard Aggregator**
 
+This project implements a backend solution to process quiz event data from an external API, handle duplicate responses, and generate an accurate leaderboard.
 
-#Overview
+**Description**
 
-The API may return the same event data across different polls. To ensure accurate results, each event is processed only once using a unique key based on roundId and participant.
+The application polls the provided API 10 times, collects event data, removes duplicate entries based on a unique identifier (roundId and participant), aggregates scores for each participant, and generates a sorted leaderboard. The final result is then submitted to the API for validation.
 
-
-#Tech Stack
-
+**Tech Stack**
 Node.js
 Axios
 
-
-#How it Works
-
-Calls the API 10 times with a 5-second delay between requests
-Collects all event data
-Removes duplicate entries using (roundId + participant)
-Aggregates scores per participant
-Sorts and generates the final leaderboard
-Submits the result to the API
-
-
-#Run the Project
-
+**Execution**
 npm install
 node index.js
 
-
-#Notes
-
-Exactly 10 polls are required
-
-Duplicate events must be ignored
-
+**Key Logic**
+Deduplication is performed using a combination of roundId and participant
+Each unique event is processed only once
+Scores are aggregated per participant
 Leaderboard is sorted in descending order of total score
 
-Submission is done only once
+**Requirements Met**
+10 API polls executed
+Duplicate data handled correctly
+Accurate leaderboard generated
+Correct total score computed
+Single submission performed
