@@ -9,29 +9,22 @@ The API may return the same event data across different polls. To ensure accurat
 #Tech Stack
 
 Node.js
-
 Axios
 
 
 #How it Works
 
 Calls the API 10 times with a 5-second delay between requests
-
 Collects all event data
-
 Removes duplicate entries using (roundId + participant)
-
 Aggregates scores per participant
-
 Sorts and generates the final leaderboard
-
 Submits the result to the API
 
 
 #Run the Project
 
 npm install
-
 node index.js
 
 
